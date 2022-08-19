@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //builder.Services.AddScoped<HelloWorldInterface, HelloWorldService>();
-builder.Services.AddScoped(p => new HelloWorldService());
+builder.Services.AddScoped<HelloWorldInterface>(p => new HelloWorldService());
 
 var app = builder.Build();
 
