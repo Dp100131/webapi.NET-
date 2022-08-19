@@ -1,4 +1,7 @@
-using webAPIapi.Middlewares;
+//using webAPIapi.Middlewares;
+
+using webAPIapi.Interfaces;
+using webAPIapi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +11,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//builder.Services.AddScoped<HelloWorldInterface, HelloWorldService>();
+builder.Services.AddScoped(p => new HelloWorldService());
 
 var app = builder.Build();
 
