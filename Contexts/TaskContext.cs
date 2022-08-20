@@ -8,7 +8,6 @@ namespace webAPIapi.Contexts
         public DbSet<Category> Categories { get; set; }
         public DbSet<Models.Task> Tasks { get; set; }
         public TaskContext (DbContextOptions<TaskContext> options) :base(options){}
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             List<Category> categoriesInit = new List<Category>();

@@ -1,5 +1,6 @@
 //using webAPIapi.Middlewares;
 
+using webAPIapi;
 using webAPIapi.Interfaces;
 using webAPIapi.Services;
 
@@ -13,6 +14,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //builder.Services.AddScoped<HelloWorldInterface, HelloWorldService>();
 builder.Services.AddScoped<HelloWorldInterface>(p => new HelloWorldService());
+builder.Services.AddScoped<TaskInterface, TaskService>();
+builder.Services.AddScoped<CategoryInterface, CategoryService>();
 
 var app = builder.Build();
 
